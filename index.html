@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070608">
+<title>ПОМЕХИ — визуальная новелла</title>
+<meta name="description" content="Короткая визуальная новелла о ритме, слоях и дереализации. Звук собирается прямо в браузере.">
+<meta property="og:title" content="ПОМЕХИ">
+<meta property="og:description" content="Короткая визуальная новелла о ритме, слоях и дереализации.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070608'/%3E%3Crect x='10' y='14' width='44' height='6' fill='%23d4ff3f'/%3E%3Crect x='10' y='26' width='30' height='6' fill='%23ff2a6d'/%3E%3Crect x='18' y='38' width='36' height='6' fill='%2300e5ff'/%3E%3Crect x='10' y='50' width='22' height='4' fill='%23efeade'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-mode="title">
+<div id="bg" aria-hidden="true"></div>
+<div id="grain" aria-hidden="true"></div>
+<div id="scan" aria-hidden="true"></div>
+<div id="vignette" aria-hidden="true"></div>
+
+<header id="hud">
+  <div class="hud-left"><span class="brand">ПОМЕХИ</span></div>
+  <div class="hud-mid" id="chapter">СЛОЙ 1</div>
+  <div class="hud-right">
+    <div class="stab"><span id="stabLabel">100%</span><span class="stab-bar"><i id="stabFill"></i></span></div>
+    <button id="btnSound" class="iconbtn" type="button" aria-label="Звук" aria-pressed="true" title="Звук">♪</button>
+    <button id="btnFx" class="iconbtn" type="button" aria-label="Эффекты" aria-pressed="true" title="Эффекты">✦</button>
+  </div>
+</header>
+
+<main id="stage">
+  <section id="titleScreen" class="screen" aria-label="Титульный экран">
+    <div class="title-kicker">интерактивная проза · 6–8 минут</div>
+    <h1 class="glitch-title" data-text="ПОМЕХИ">ПОМЕХИ</h1>
+    <div class="title-sub">ритм · слой · дереализация</div>
+    <p class="title-note">Лучше в наушниках. Звук собирается прямо в браузере — без файлов и загрузок. Наушники не обязательны, но с ними честнее.</p>
+    <div class="title-actions">
+      <button id="btnStart" class="primary" type="button">начать</button>
+      <button id="btnSoundTitle" class="chip" type="button">звук: вкл</button>
+      <button id="btnFxTitle" class="chip" type="button">эффекты: вкл</button>
+    </div>
+    <div id="titleEnds" class="ends"></div>
+    <div class="title-foot">04:03 · не отвечай на сообщения</div>
+  </section>
+
+  <section id="gameScreen" class="screen hidden" aria-live="polite">
+    <div id="textWrap">
+      <div id="ghost" aria-hidden="true"></div>
+      <div id="lineText"></div>
+    </div>
+    <div id="choices" class="choices"></div>
+    <div id="hint">клик · space — дальше</div>
+  </section>
+
+  <section id="endScreen" class="screen hidden" aria-label="Концовка">
+    <div class="end-kicker">концовка <span id="endNum">—</span></div>
+    <h2 id="endName" class="end-name">—</h2>
+    <div id="endCode" class="end-code">—</div>
+    <p id="endLine" class="end-line"></p>
+    <div id="endChips" class="end-chips"></div>
+    <div class="end-actions">
+      <button id="btnAgain" class="primary" type="button">ещё раз</button>
+      <button id="btnTitle" class="chip" type="button">на титул</button>
+    </div>
+  </section>
+</main>
+
+<div id="flash" aria-hidden="true"></div>
+<div id="signal" aria-hidden="true"><span>сигнал потерян</span></div>
+
+<script src="game.js"></script>
+</body>
+</html>
