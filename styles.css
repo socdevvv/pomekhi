@@ -6,6 +6,8 @@
   --acid: #d4ff3f;
   --magenta: #ff2a6d;
   --cyan: #00e5ff;
+  --title-a: #ffb020;
+  --title-b: #8a6bff;
   --line: rgba(239, 234, 222, 0.14);
   --instab: 0;
   --mono: "Cascadia Mono", Consolas, "SFMono-Regular", Menlo, monospace;
@@ -230,15 +232,15 @@ body.low-stab .stab-bar i { background: var(--magenta); }
 }
 
 .glitch-title::before {
-  color: var(--magenta);
-  opacity: 0.62;
+  color: var(--title-a);
+  opacity: 0.72;
   clip-path: inset(12% 0 58% 0);
   animation: glitchA 5.2s steps(1) infinite;
 }
 
 .glitch-title::after {
-  color: var(--cyan);
-  opacity: 0.52;
+  color: var(--title-b);
+  opacity: 0.68;
   clip-path: inset(62% 0 10% 0);
   animation: glitchB 4.6s steps(1) infinite;
 }
